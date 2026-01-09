@@ -24,4 +24,4 @@
 5. **시뮬레이션 좌표의 유효 범위 및 데이터 타입 검사** (Data Integrity 확인)
 
 ### 📸 Execution Screenshot
-![Jest Coverage Report](./coverage-report.png)
+![Jest Coverage Report](./coverage_report.png)
