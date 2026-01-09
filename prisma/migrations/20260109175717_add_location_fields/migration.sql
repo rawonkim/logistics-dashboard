@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Shipment` ADD COLUMN `latitude` DOUBLE NULL DEFAULT 37.5665,
+    ADD COLUMN `longitude` DOUBLE NULL DEFAULT 126.9780;

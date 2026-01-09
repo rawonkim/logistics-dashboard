@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: binex-db
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: logidb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+  
+  web:
+    build: .
+    container_name: binex-web
+    ports:
+      - "3000:3000"
+      - "5555:5555"
+    environment:
+      - DATABASE_URL=mysql://root:1234@db:3306/logidb
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  mariadb_data:

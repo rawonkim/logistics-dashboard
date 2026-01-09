@@ -1,0 +1,23 @@
+# Dependency folders
+node_modules/
+
+# Environment variables (중요!)
+.env
+.env.local
+.env.production
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Prisma
+/generated/prisma
+schema.prisma.bak
+
+# Test coverage 
+/coverage/
+
+# OS metadata
+.DS_Store
+Thumbs.db

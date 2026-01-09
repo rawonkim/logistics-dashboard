@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@source "../../src/**/*.{ts,tsx}";
+
+@theme {
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-white: #ffffff;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}

@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum ShipmentStatus {
+  PENDING
+  IN_TRANSIT
+  CLEARED
+  DELIVERED
+  CUSTOMS_HOLD
+  CANCELLED
+}
+
+model Shipment {
+  id              Int            @id @default(autoincrement())
+  trackingNumber  String         @unique
+  vesselName      String?
+  clientName      String
+  originPort      String
+  destinationPort String
+  status          ShipmentStatus @default(PENDING)
+  estimatedArrival DateTime
+  actualArrival   DateTime?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  latitude          Float?   @default(37.5665) 
+  longitude         Float?   @default(126.9780)
+
+  @@index([trackingNumber])
+  @@index([clientName])
+}
